@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+<head>
+    <title>{% block title %}{{ new.title }}{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+             <h1><u>{{ new.title }}</u></h1>
+             <p>{{ new.content}}</p>
+             <span>{{ new.date }}</span>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+<head>
+    <title>{% block title %}Advises page{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+        {% for advice in advises %}
+            <div>
+                <p style="font-size: 1.5em">{{ advice.content }}</p>
+                <hr>
+            </div>
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>

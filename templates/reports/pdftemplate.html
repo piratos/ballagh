@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title></title>
+            <style>
+        @font-face {
+  font-family: 'Bahij Titr Bold';
+  src: url('http://www5.miele.nl/apps/vg/nl/miele/mielea02.nsf/0e87ea0c369c2704c12568ac005c1831/07583f73269e053ac1257274003344e0/$FILE/arial.ttf');
+}
+    </style>
+</head>
+<body style="font-family: 'Bahij Titr Bold';dir:rtl">
+<div id="report" style="font-size: 20px">
+    <h1>Report</h1>
+    <div style="width: 400">
+        <table>
+    <tr><td style="width: 550px"><b>Case # {{ report.id }}</b></td><td><b>Type : {{ report.type }}</b></td></tr>
+        </table>
+    </div>
+        <table border="0.5px">
+        <tr style="height: 20px"><td align="center">Name</td><td  align="center" style="width: 450px">{{ report.full_name }}</td></tr>
+        <tr style="height: 20px"><td align="center">CIN</td><td  align="center" style="width: 450px">{{ report.cin }}</td></tr>
+        <tr style="height: 20px"><td align="center">Job</td><td  align="center" style="width: 450px">{{ report.job }}</td></tr>
+        </table>
+        <br>
+        <b>crime information</b>
+        <hr>
+        <ul>
+        <li><b>Gouvernorate :  </b>{{ report.gouvernorat }}</li>
+        <li><b>Type :  </b>{{ report.type }}</li>
+        <li><b>Status :  </b>{{ report.status }}</li>
+        </ul>
+        <br>
+        <b>More infos</b>
+        <hr>
+        <ul>
+        <li><b>Description :  </b>{{ report.description }}</li>
+        {% if report.justify %}
+            <li><b>Justification link :  </b>http://XXXX.XXX{{ report.justify.url }}</li>
+        {% endif %}
+        <li><b>Web Link : </b>http://XXXX.XXXX{{ request.path }}</li>
+        </ul>
+</div>
+</body>
+</html>

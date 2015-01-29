@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+{% load static %}
+<head>
+    <title>{% block title %}stats{% endblock %}</title>
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+    <div class="" id="statModal">
+
+	<div class="modal-body" style="max-height: 1000px">
+		<div class="well">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#status" data-toggle="tab">حالة البلاغ</a></li>
+				<li id="to_type" ><a href="#type" data-toggle="tab" >نوعية البلاغ</a></li>
+                <li id="to_gov" ><a href="#gov" data-toggle="tab" >الخريطة</a></li>
+			</ul>
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane active in" id="status">
+					<div id="status_container"></div>
+				</div>
+				<div class="tab-pane fade" id="type1">
+                    <div id="type_container"></div>
+				</div>
+                <div class="tab-pane fade" id="gov1">
+                    <div id="container"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="http://code.highcharts.com/maps/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="http://github.highcharts.com/modules/map.js"></script>
+<script src="http://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="http://code.highcharts.com/mapdata/countries/tn/tn-all.js"></script>
+<script src="{% static 'js/map.js' %}"></script>
+<script src="{% static 'js/stats.js' %}"></script>
+<script id="launcher">getdata();</script>
+<script src="{% static 'js/tabs.js' %}"></script>
+{% endblock %}
+</body>
+</html>

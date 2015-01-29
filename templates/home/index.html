@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+<head>
+    <title>{% block title %}HOME page{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+
+             {% for article in articles %}
+             <h1><u>{{ article.title }}</u></h1>
+             <p>{{ article.content|truncatechars:250 }}<a href="/news/article/{{ article.id }}">see more</a></p>
+             <span style="color: #c9020e">{{ article.date }}</span>
+             {% endfor %}
+    {% endblock %}
+</body>
+</html>

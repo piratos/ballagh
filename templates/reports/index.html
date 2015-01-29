@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+<head>
+    <title>{% block title %}Reports page{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+
+             {% for report in reports %}
+             <div id="report" class="row" style="text-align: right">
+             <div class="col-md-6" style="background-color: rgb(207, 207, 207);">
+             <h1><a href="/reports/getreport/{{ report.id }}"><u>{{ report.title }}</u></a><b style="font-size: 20px">  {{ report.votes }} أصوات</b></h1>
+             <p> <u><b>{{ report.type }}</b></u> تم التبليغ من طرف <b>{{ report.full_name }}</b><br>
+             {{ report.description }}<br>
+             إقرأ <a href="/reports/getreport/{{ report.id }}">المزيد</a> </p>
+             <span style="color: #c9020e">{{ report.date }}</span>
+             </div>
+             <div id="voting" class="col-md-2 panel-body" style="background-color: rgb(230, 230, 230);width: 140px;">
+                 <a href="/reports/support/{{ report.id }}">
+                     <button class="btn btn-success " style="width: 100px">صوت مع</button>
+                 </a>
+                 <a href="/reports/nsupport/{{ report.id }}">
+                     <button class="btn btn-warning " style="width: 100px">صوت ضد</button>
+                 </a>
+
+             </div>
+             </div>
+              <hr>
+             {% endfor %}
+    {% endblock %}
+</body>
+</html>

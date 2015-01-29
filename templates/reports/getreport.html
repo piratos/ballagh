@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+<head>
+    <title>{% block title %}get report{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<div class="row">
+<div class="col-md-7">
+    <div class="panel panel-warning">
+    <div class="panel-title"></div>
+    <div class="panel-body" style="direction: right-to-left;text-align: right">
+    <h2><b>العنوان : </b>{{ report.title }} <b style="font-size: 0.7em">{{ report.votes }} أصوات</b></h2>
+    <h3><b>المبلٍِِّغ : </b>{{ report.full_name }}</h3>
+    <h3><b>رقم ب ت و : </b>{{ report.cin }}</h3>
+    <h3><b>المهنة : </b>{{ report.job }}</h3>
+    <h3><b>حالة القضيّة : </b>{{ report.status }}</h3>
+    <h3><b>تفاصيل : </b>{{ report.description }}</h3>
+    </div>
+    </div>
+</div>
+<div id="voting" class="col-md-1 panel-body" style="background-color: rgb(230, 230, 230);width: 140px;">
+      <a href="/reports/support/{{ report.id }}">
+            <button class="btn btn-success " style="width: 100px">صوت مع</button>
+      </a>
+      <a href="/reports/nsupport/{{ report.id }}">
+            <button class="btn btn-warning " style="width: 100px">صوت ضد</button>
+      </a>
+      <a href="/reports/getpdf/{{ report.id }}">
+            <button class="btn btn-info " style="width: 100px">إطبع البلاغ</button>
+      </a>
+</div>
+</div>
+{% endblock %}
+{% block scripts %}
+{% endblock %}
+</body>
+</html>
