@@ -33,7 +33,7 @@ impacket==0.9.10
 itsdangerous==0.24
 leveldb==0.193
 lockfile==0.8
-lxml==3.3.3
+lxml==4.6.3
 oauthlib==0.6.1
 oneconf==0.3.7
 paramiko==2.0.9
